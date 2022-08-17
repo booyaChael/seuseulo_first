@@ -5,7 +5,7 @@ const calendarYear = date.getFullYear();
 //현재 월
 const calendarMonth = date.getMonth() + 1;
 //현재 일
-const calendarToday = date.getDate();
+const calendarToday = date.getDate() + 1;
 //현재 요일
 const calendarTodayDay = date.getDay();
 //현월 마지막 날짜
@@ -46,3 +46,6 @@ arWeek.forEach((value, i) => {
 });
 calendarTableDate += "</tr>";
 document.getElementById("calendar_table_date").innerHTML = calendarTableDate;
+
+//h1에 현월 표시//
+document.getElementById("calendar_month").innerText = `${calendarMonth}월`;
