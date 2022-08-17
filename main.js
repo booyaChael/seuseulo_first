@@ -39,3 +39,10 @@ for (let i = calendarTodayDay-1; i >= 0; i--) {
 }
 console.log(arWeek);
 
+//주간 배열 html의 table로 연결짓기//
+var calendarTableDate = "<tr>";
+arWeek.forEach((value, i) => {
+    calendarTableDate += `<td>${value}</td>`;
+});
+calendarTableDate += "</tr>";
+document.getElementById("calendar_table_date").innerHTML = calendarTableDate;
