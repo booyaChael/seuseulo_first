@@ -51,6 +51,32 @@ document.getElementById("calendar_table_date").innerHTML = calendarTableDate;
 document.getElementById("calendar_month").innerHTML = `${calendarMonth}월`;
 
 //showToDo//
+const toDoForm = document.getElementById("todo-form");
+const toDoInput = document.querySelector("#todo-form input");
+const toDoList = document.getElementById("todo-list");
+
+let toDos = [];
+
+
+function handleToDoSubmit(event){ 
+    event.preventDefault();
+    const newToDo = toDoInput.value;
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.innerText = newToDo;
+    const button = document.createElement("button");
+    button.innerText = "X";
+    
+
+    li.appendChild(span);
+    li.appendChild(button);
+
+    toDoList.appendChild(li);
+}
+toDoForm.addEventListener("submit", handleToDoSubmit);
+
+
 function showToDo(element){
     alert(element.innerHTML);
+
 }
