@@ -41,11 +41,16 @@ console.log(arWeek);
 
 //주간 배열 html의 table로 연결짓기//
 var calendarTableDate = "<tr>";
-arWeek.forEach((value, i) => {
-    calendarTableDate += `<td>${value}</td>`;
+arWeek.forEach((value) => {
+    calendarTableDate += `<td onClick="showToDo(this);">${value}</td>`;
 });
 calendarTableDate += "</tr>";
 document.getElementById("calendar_table_date").innerHTML = calendarTableDate;
 
 //h1에 현월 표시//
-document.getElementById("calendar_month").innerText = `${calendarMonth}월`;
+document.getElementById("calendar_month").innerHTML = `${calendarMonth}월`;
+
+//showToDo//
+function showToDo(element){
+    alert(element.innerHTML);
+}
