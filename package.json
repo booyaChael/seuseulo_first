@@ -1,0 +1,28 @@
+{
+  "name": "seuseulo_first",
+  "version": "1.0.0",
+  "description": "first version",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/booyaChael/seuseulo_first.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/booyaChael/seuseulo_first/issues"
+  },
+  "homepage": "https://github.com/booyaChael/seuseulo_first#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

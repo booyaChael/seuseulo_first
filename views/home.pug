@@ -1,0 +1,24 @@
+doctype html 
+html(lang="ko")
+    head        
+        title #{pageTitle} | Wetube
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    body
+        h1#calendar_month
+        div 
+            table#calendar_table 
+                thead 
+                    th 월
+                    th 화
+                    th 수
+                    th 목
+                    th 금
+                    th 토
+                    th 일
+                tr#calendar_table_date 
+        
+        div#todo 
+            form#todo-form
+                input(type="text")
+                input(type="submit" value="저장")
+            ul#todo-list 

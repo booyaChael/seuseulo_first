@@ -37,7 +37,6 @@ for (let i = calendarTodayDay-1; i >= 0; i--) {
     }
     arWeek[i] = weekDayBef;
 }
-console.log(arWeek);
 
 //주간 배열 html의 table로 연결짓기//
 var calendarTableDate = "<tr>";
@@ -56,7 +55,6 @@ const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
 function deleteToDo(event){
-    console.log(event.target.parentElement);
     const li = event.target.parentElement;
     li.remove();
 }
