@@ -4,9 +4,10 @@ html(lang="ko")
         title #{pageTitle} | Wetube
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body
-        h1#calendar_month
+        //calendar//
+        h1 #{calendar_month}월
         div 
-            table#calendar_table 
+            table
                 thead 
                     th 월
                     th 화
@@ -15,10 +16,13 @@ html(lang="ko")
                     th 금
                     th 토
                     th 일
-                tr#calendar_table_date 
-        
-        div#todo 
-            form#todo-form
+                tr
+                    each date in arWeek
+                        td((click)='showDate')=date
+        //ToDoList//
+        div
+            form
                 input(type="text")
                 input(type="submit" value="저장")
             ul#todo-list 
+        
