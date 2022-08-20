@@ -42,4 +42,3 @@ export const home = (req, res) =>
         calendar_month: calendarMonth, //h1
         arWeek, //날짜
     });
-export const login = (req, res) => res.send("Login");
