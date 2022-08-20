@@ -42,7 +42,4 @@ export const home = (req, res) =>
         calendar_month: calendarMonth, //h1
         arWeek, //날짜
     });
-//날짜 띄우기
-function showDate(element){
-    console.log("I'm working");
-};
+export const login = (req, res) => res.send("Login");
