@@ -3,6 +3,7 @@ html(lang="ko")
     head        
         title #{pageTitle} | Wetube
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        
     body
         header 
             nav 
@@ -28,8 +29,13 @@ html(lang="ko")
                         td=date
         //ToDoList//
         div
-            form
-                input(name="todo", type="text")
+            form(method="POST")
+                input(name="subject", placeholder="과목", required, type="text")
+                input(name="name", placeholder="과제 이름", required, type="text")
+                input(name="content", placeholder = "과제 내용", type="text")
+                input(name="due_date", type="date")
                 input(type="submit" value="저장")
-            ul#todo-list 
+            #todo_list
+                ul
+                    li
         

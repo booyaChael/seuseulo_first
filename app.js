@@ -14,6 +14,9 @@ app.listen(port,handleListening);
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+
+app.use(express.urlencoded({extended: true}));
+
 //앱 세팅-router
 app.use("/", rootRouter);
 app.use("/user", userRouter);

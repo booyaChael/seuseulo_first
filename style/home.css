@@ -1,0 +1,12 @@
+body{
+    background-color: green;
+}
+h1{
+    font-size:50px;
+}
+#todo_list{
+    background-color: tomato;
+    width: 100px;
+    height: 120px;
+    border: 1px solid black;
+}
