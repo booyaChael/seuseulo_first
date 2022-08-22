@@ -1,3 +1,4 @@
+import "../seuseulo_first/db.js";
 import express from "express";
 import rootRouter from "./src/routers/rootRouter.js";
 import userRouter from "./src/routers/userRouter.js";
