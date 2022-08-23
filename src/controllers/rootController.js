@@ -62,13 +62,17 @@ export const getHome = async(req, res) =>{
 import Todo from "/Users/imchaeeul/seuseulo_first/models/Todo.js";
 
 export const postHome = async(req, res) => {
-    const {subject, name, content, due_date} = req.body;
-    await Todo.create({
-        subject,
-        name,
-        content,
-        due_date,
-    });
+    const {subject, name, content, due_date, due_time} = req.body;
+    try{
+        await Todo.create({
+            subject,
+            name,
+            content,
+            due_date,
+            due_time,
+        })} catch(error){
+        return res.render("model create error");
+        }
     return res.redirect("/");
 };
 
