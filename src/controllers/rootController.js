@@ -42,12 +42,18 @@ export const getHome = (req, res) =>
         calendar_month: calendarMonth, //h1
         arWeek, //날짜
     });
-
+   
 import Todo from "/Users/imchaeeul/seuseulo_first/models/Todo.js";
-const todos = [];
-export const postHome = (req, res) => {
+
+export const postHome = async(req, res) => {
     const {subject, name, content, due_date} = req.body;
-    res.redirect("/");
+    await Todo.create({
+        subject,
+        name,
+        content,
+        due_date,
+    });
+    return res.redirect("/");
 };
 
 
