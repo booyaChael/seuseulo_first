@@ -1,0 +1,5 @@
+mixin todo_list(todo)
+    div
+        h4
+            a(href=`/user/todo/${todo.id}`)=todo.subject
+        h7 #{todo.name} #{todo.due_date}까지

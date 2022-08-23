@@ -1,4 +1,4 @@
-include mixins/todo
+include mixins/todo_list
 
 doctype html 
 html(lang="ko")
@@ -40,6 +40,6 @@ html(lang="ko")
                 input(type="submit" value="저장")
             #todo_list
                 div
-                    each todo in todos 
-                        +todo(todo)
+                    each todo in todos
+                        +todo_list(todo)
         

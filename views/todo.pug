@@ -1,0 +1,24 @@
+doctype html 
+html(lang="ko")
+    head        
+        title #{pageTitle} | SeuseuLo
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        
+    body
+        header 
+            nav 
+                ul
+                    li 
+                        a(href="/") 홈
+                    li 
+                        a(href="/login") 로그인
+        div
+            h1 #{todo.subject} #{todo.name}
+            h4=todo.content 
+            h7=todo.due_date
+        form
+            input(type="text")
+            input(type="submit" value="제출")
+
+        
+        
