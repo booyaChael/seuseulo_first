@@ -35,13 +35,29 @@ for (let i = calendarTodayDay-1; i >= 0; i--) {
     }
     arWeek[i] = weekDayBef;
 }
+export const home = async (req, res) => {
+    try {
+      const datas = await Video.find({});
+    } catch (error) {
+      return res.render("server-error");
+    }
+    return res.render("home", { pageTitle: "Home", datas });
+  };
 
-export const getHome = (req, res) =>
-    res.render("home", {
-        pageTitle: "home", 
-        calendar_month: calendarMonth, //h1
-        arWeek, //날짜
-    });
+export const getHome = async(req, res) =>{
+    try {
+        const todos = await Todo.find({});
+        return res.render("home", {
+            pageTitle: "home", 
+            calendar_month: calendarMonth, //h1
+            arWeek,
+            todos, //날짜
+        })
+    } catch (error) {
+        return res.render("server-error");
+    }};
+    
+
    
 import Todo from "/Users/imchaeeul/seuseulo_first/models/Todo.js";
 
