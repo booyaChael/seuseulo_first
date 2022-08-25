@@ -34,15 +34,7 @@ for (let i = calendarTodayDay-1; i >= 0; i--) {
         weekDayBef = preCalendarMonthDays;
     }
     arWeek[i] = weekDayBef;
-}
-export const home = async (req, res) => {
-    try {
-      const datas = await Video.find({});
-    } catch (error) {
-      return res.render("server-error");
-    }
-    return res.render("home", { pageTitle: "Home", datas });
-  };
+};
 
 export const getHome = async(req, res) =>{
     try {
@@ -59,10 +51,10 @@ export const getHome = async(req, res) =>{
     
 
    
-import Todo from "/Users/imchaeeul/seuseulo_first/models/Todo.js";
+import Todo from "../../models/Todo.js";
 
 export const postHome = async(req, res) => {
-    const {subject, name, content, due_date, due_time} = req.body;
+    const {subject, name, content, due_date, due_time,} = req.body;
     try{
         await Todo.create({
             subject,

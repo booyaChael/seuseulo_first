@@ -1,4 +1,4 @@
-import { text } from "express";
+import express from "express";
 import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema({
@@ -6,6 +6,7 @@ const todoSchema = new mongoose.Schema({
     name: {type:String, required: true},
     content: {type: String, required: true},
     due_date: {type:Date, required: true},
+    assignment: {type: String}
 });
 const Todo = mongoose.model('Todo', todoSchema);
 
