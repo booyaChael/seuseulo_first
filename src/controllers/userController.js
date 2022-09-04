@@ -17,7 +17,6 @@ export const postTodo = async(req, res) => {
         }
     };
 
-
 export const deleteTodo = async(req, res) => {
     try{
         const {id} = req.params;
@@ -27,5 +26,7 @@ export const deleteTodo = async(req, res) => {
             return res.render("error");
         }
     };
+
+
 
 export const getLogin = (req, res) => res.render("login",)

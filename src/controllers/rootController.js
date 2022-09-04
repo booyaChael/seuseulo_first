@@ -52,6 +52,7 @@ export const getHome = async(req, res) =>{
 
    
 import Todo from "../../models/Todo.js";
+import User from "../../models/User.js";
 
 export const postHome = async(req, res) => {
     const {subject, name, content, due_date, due_time,} = req.body;
@@ -67,7 +68,32 @@ export const postHome = async(req, res) => {
         }
     return res.redirect("/");
 };
-
+export const getJoin = async(req, res) => {
+    try{
+        return res.render("join", {
+            pageTitle: "Join",
+        })
+    } catch(error){
+        return res.render("error");
+    }
+};
+export const postJoin = async(req, res) => {
+    const {name, user_id, user_password, school, grade, className, classNumber} = req.body;
+    try{
+        await User.create({
+            name,
+            user_id,
+            user_password,
+            school,
+            grade,
+            className,
+            classNumber
+        })
+        return res.redirect("/");
+    } catch(error){
+        return res.send("model create error");
+        }   
+    };
 
 
 
