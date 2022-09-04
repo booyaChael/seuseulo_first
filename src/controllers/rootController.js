@@ -78,7 +78,18 @@ export const getJoin = async(req, res) => {
     }
 };
 export const postJoin = async(req, res) => {
-    const {name, user_id, user_password, school, grade, className, classNumber} = req.body;
+    const {name, user_id, user_password, user_password_confirm, school, grade, className, classNumber} = req.body;
+    const pageTitle = "Join";
+    if(user_password !== user_password_confirm){
+        return res.status(400).render("join",{
+            pageTitle,
+            errorMessage: "비밀번호와 비밀번호 확인이 일치하지 않습니다",
+        });
+    }
+    const user_id_exists = await User.exists({user_id});
+    if(user_id_exists){
+        return res.render("join", {pageTitle: "Join", errorMessage:"이미 존재하는 아이디 입니다. 다른 아이디를 입력해주세요",});
+    };
     try{
         await User.create({
             name,
@@ -92,8 +103,7 @@ export const postJoin = async(req, res) => {
         return res.redirect("/");
     } catch(error){
         return res.send("model create error");
-        }   
-    };
-
+        }; 
+};
 
 
