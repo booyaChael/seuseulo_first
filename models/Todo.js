@@ -6,7 +6,7 @@ const todoSchema = new mongoose.Schema({
     name: {type:String, required: true},
     content: {type: String, required: true},
     due_date: {type:Date, required: true},
-    assignment: {type: String}
+    assignment: {type: String,},
 });
 const Todo = mongoose.model('Todo', todoSchema);
 

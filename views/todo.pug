@@ -15,6 +15,7 @@ html(lang="ko")
                         a(href="/login") 로그인
         div
             h1 #{todo.subject} #{todo.name}
+            a(href=`${todo.id}/delete`) 삭제
             h4=todo.content 
             h7=todo.due_date
         form(method="POST")

@@ -41,5 +41,5 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 //날짜 띄우기
 function showToDo(element){
-    alert(element.innerHTML);
+    alert(element.innerText);
 }
